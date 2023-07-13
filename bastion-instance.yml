@@ -42,7 +42,6 @@
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{ bastion_ami }}"
-        vpc_id: "{{vpcid}}"
         vpc_subnet_id: "{{pubsub1id}}"
       register: bastionHost_out
 
