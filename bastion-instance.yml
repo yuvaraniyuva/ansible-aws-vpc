@@ -49,8 +49,8 @@
         exact_count: 1
         count_tag:
           Name: "Bastion_host"
-        group_id: "{{BastionSG_out.group_id}}"
         vpc_subnet_id: "{{pubsub1id}}"
+        group_id: "{{BastionSG_out.group_id}}"
       register: bastionHost_out
 
 
