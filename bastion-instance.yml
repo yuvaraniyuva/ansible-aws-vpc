@@ -48,7 +48,6 @@
           Name: Bastion_host
           Project: Vprofile
           Owner: Devops Team
-        exact_count: 1
         count: 1
         count_tag:
           Name: Bastion_host
