@@ -142,14 +142,15 @@
     - debug:
         var: "{{item}}"
       loop:
-        - vpcout
-        - pubsub1_out
-        - pubsub2_out
-        - pubsub3_out
-        - privsub1_out
-        - privsub2_out
-        - privsub3_out
-        - igw_out
-        - pubRT_out
-        - NATGW_out
-        - privRT_out
+        - vpcout.vpc.id
+        - pubsub1_out.subnet.id
+        - pubsub2_out.subnet.id
+        - pubsub3_out.subnet.id
+        - privsub1_out.subnet.id
+        - privsub2_out.subnet.id
+        - privsub3_out.subnet.id
+        - igw_out.gateway_id
+        - pubRT_out.route_table.id
+        - NATGW_out.nat_gateway_id
+        - privRT_out.route_table.id
+
