@@ -138,3 +138,18 @@
           - dest: 0.0.0.0/0
             gateway_id: "{{NATGW_out.nat_gateway_id}}"
       register: privRT_out
+
+    - debug:
+        var: "{{item}}"
+      loop:
+        - vpcout
+        - pubsub1_out
+        - pubsub2_out
+        - pubsub3_out
+        - privsub1_out
+        - privsub2_out
+        - privsub3_out
+        - igw_out
+        - pubRT_out
+        - NATGW_out
+        - privRT_out
