@@ -49,6 +49,7 @@
           Project: Vprofile
           Owner: Devops Team
         exact_count: 1
+        InstanceMetadataTags: disabled
         count: 1
         count_tag:
           Name: Bastion_host
