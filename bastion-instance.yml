@@ -50,7 +50,7 @@
     #      Name: Bastion_host
     #    exact_count: 1
         vpc_subnet_id: "{{pubsub1id}}"
-        group_id: "{{BastionSG_out.group_id}}"
+    #   group_id: "{{BastionSG_out.group_id}}"
       register: bastionHost_out
 
 
