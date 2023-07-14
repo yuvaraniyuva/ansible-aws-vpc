@@ -39,6 +39,7 @@
     - name: Creating Bastion Host
       ec2_instance:
         key_name: "vprofile-key"
+        region: "{{region}}"
         vpc_subnet_id: "{{pubsub1id}}"
         instance_type: t2.micro
         security_group: Bastion-host-sg
