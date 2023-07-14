@@ -36,13 +36,7 @@
             cidr_ip: "{{MYIP}}"
       register: BastionSG_out
 
-    - name: Creating Bastion Host
-      ec2:
-        key_name: vprofile-key
-        region: "{{region}}"
-        instance_type: t2.micro
-        image: "{{ bastion_ami }}"
-      register: bastionHost_out
+
 
 
 
