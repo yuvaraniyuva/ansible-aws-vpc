@@ -47,7 +47,7 @@
           assign_public_ip: true
         image_id: "{{bastion_ami}}"
         tags:
-          Environment: Testing
+          Name: Bastion_host
 
 
 
