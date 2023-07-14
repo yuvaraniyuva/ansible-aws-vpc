@@ -37,10 +37,16 @@
       register: BastionSG_out
 
     - name: Creating Bastion Host
-      ec2:
-        key_name: vprofile-key
-        region: "{{region}}"
-        image: "{{bastion_ami}}"
+      ec2_instance:
+        key_name: "vprofile-key"
+        vpc_subnet_id: "{{pubsub1id}}"
+        instance_type: t2.micro
+        security_group: Bastion-host-sg
+        network:
+          assign_public_ip: true
+        image_id: "{{bastion_ami}}"
+        tags:
+          Environment: Testing
 
 
 
