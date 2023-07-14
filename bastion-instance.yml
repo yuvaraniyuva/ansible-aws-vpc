@@ -38,6 +38,7 @@
 
     - name: Creating Bastion Host
       ec2_instance:
+        name: "Bastion_host"
         key_name: "vprofile-key"
         region: "{{region}}"
         vpc_subnet_id: "{{pubsub1id}}"
