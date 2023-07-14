@@ -1,0 +1,7 @@
+- name: Setup Vprofile Stack
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: Import VPCID Output Variables
+      include_vars: vars/output_vars
