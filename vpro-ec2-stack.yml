@@ -14,8 +14,8 @@
 
     - name: Create vprofile ec2 key
       ec2_key:
-      name: vprokey
-      region: "{{region}}"
+        name: vprokey
+        region: "{{region}}"
       register: vprokey_out
 
     - name: Save Private Key into File loginkey_vpro.pem
