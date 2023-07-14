@@ -3,5 +3,24 @@
   connection: local
   gather_facts: False
   tasks:
-    - name: Import VPCID Output Variables
+    - name: Import VPCID setup Variables
       include_vars: vars/output_vars
+
+    - name: Import vprofile setup Variables
+      include_vars: vars/vprostacksetup
+
+    - name: Import VPC setup Variables
+      include_vars: vars/vpc_setup
+
+    - name: Create vprofile ec2 key
+      ec2_key:
+      name: vprokey
+      region: "{{region}}"
+      register: vprokey_out
+
+    - name: Save Private Key into File loginkey_vpro.pem
+      copy:
+        content: "{{vprokey_out.key.private_key}}"
+        dest: "./loginkey_vpro.pem"
+        mode: 0600
+      when: vprokey_out.changed
