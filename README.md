@@ -13,3 +13,4 @@ Name: Bastion_host
 Project: Vprofile
 Owner: Devops Team
 group_id: "{{BastionSG_out.group_id}}"
+vpc_subnet_id: "{{pubsub1id}}"
