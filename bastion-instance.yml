@@ -49,6 +49,7 @@
         image_id: "{{bastion_ami}}"
         tags:
           Name: Bastion_host
+      register: bastionHost_out
 
 
 
