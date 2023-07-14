@@ -40,7 +40,7 @@
       ec2:
         key_name: vprofile-key
         region: "{{region}}"
-        image: ami-02b8534ff4b424939
+        image: "{{bastion_ami}}"
 
 
 
