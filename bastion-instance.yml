@@ -40,6 +40,7 @@
       ec2:
         key_name: vprofile-key
         region: "{{region}}"
+        image: "ami-024e6efaf93d85776"
 
 
 
