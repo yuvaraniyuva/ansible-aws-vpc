@@ -67,3 +67,71 @@
         rules:
           - proto: all
             group_id: "{{vproStackSG_out.group_id}}"
+
+    - name: Creating Nginx web01
+      ec2_instance:
+        name: "web01"
+        key_name: "vprokey"
+        region: "{{region}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        security_group: vproStack-sg
+        image_id: "{{nginx_ami}}"
+        tags:
+          Name: web01
+      register: web01_out
+
+    - name: Creating Tomcat app01
+      ec2_instance:
+        name: "app01"
+        key_name: "vprokey"
+        region: "{{region}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        security_group: vproStack-sg
+        image_id: "{{tomcat_ami}}"
+        tags:
+          Name: app01
+      register: app01_out
+
+    - name: Creating Memcache mc01
+      ec2_instance:
+        name: "mc01"
+        key_name: "vprokey"
+        region: "{{region}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        security_group: vproStack-sg
+        image_id: "{{memcache_ami}}"
+        tags:
+          Name: mc01
+      register: mc01_out
+
+    - name: Creating RabbitMQ rmq01
+      ec2_instance:
+        name: "rmq01"
+        key_name: "vprokey"
+        region: "{{region}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        security_group: vproStack-sg
+        image_id: "{{rmq_ami}}"
+        tags:
+          Name: rmq01
+      register: rmq01_out
+
+    - name: Creating MySQL db01
+      ec2_instance:
+        name: "db01"
+        key_name: "vprokey"
+        region: "{{region}}"
+        vpc_subnet_id: "{{privsub1id}}"
+        instance_type: t2.micro
+        security_group: vproStack-sg
+        image_id: "{{mysql_ami}}"
+        tags:
+          Name: db01
+      register: db01_out
+
+    - debug:
+        var: db01_out
