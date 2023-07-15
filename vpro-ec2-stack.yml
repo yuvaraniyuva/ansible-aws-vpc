@@ -158,7 +158,7 @@
       blockinfile:
          path: provision-stack/group_vars/hostip
          block:
-           web01_ip: "{{web01_out.instances[0].private_ip_address}}"
+           web01_ip: web01_out.instances[0].private_ip_address
            app01_ip: "{{app01_out.instances[0].private_ip_address}}"
            rmq01_ip: "{{rmq01_out.instances[0].private_ip_address}}"
            mc01_ip: "{{mc01_out.instances[0].private_ip_address}}"
