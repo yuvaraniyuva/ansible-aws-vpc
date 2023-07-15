@@ -157,7 +157,7 @@
     - name: Insert/Update Host IP & Name in file provision-stack/group_vars/hostip
       blockinfile:
          path: provision-stack/group_vars/hostip
-         block:
+         block: |
            web01_ip: "{{web01_out.instances[0].private_ip_address}}"
            app01_ip: "{{app01_out.instances[0].private_ip_address}}"
            rmq01_ip: "{{rmq01_out.instances[0].private_ip_address}}"
@@ -174,7 +174,7 @@
       blockinfile:
         path: provision-stack/inventory-vpro
         block: |
-          web01 ansible_host="{{web01_out.instances[0].private_ip_address}}"
+          web01 ansible_host= {{web01_out.instances[0].private_ip_address}}
           app01 ansible_host="{{app01_out.instances[0].private_ip_address}}"
           rmq01 ansible_host="{{rmq01_out.instances[0].private_ip_address}}"
           mc01 ansible_host="{{mc01_out.instances[0].private_ip_address}}"
