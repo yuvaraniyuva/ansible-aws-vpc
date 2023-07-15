@@ -170,43 +170,43 @@
         dest: provision-stack/loginkey_vpro.pem
         mode: '0400'
 
-   - name: Insert/Update Inventory file provision-stack/inventory-vpro
-     blockinfile:
-       path: provision-stack/inventory-vpro
-       block: |
-         web01 ansible_host="{{web01_out.tagged_instance[0].private_ip}}"
-         app01 ansible_host="{{app01_out.tagged_instance[0].private_ip}}"
-         rmq01 ansible_host="{{rmq01_out.tagged_instance[0].private_ip}}"
-         mc01 ansible_host="{{mc01_out.tagged_instance[0].private_ip}}"
-         db01 ansible_host="{{db01_out.tagged_instance[0].private_ip}}"
-         cntl ansible_host=49.204.131.224 ansible_connection=local
+    - name: Insert/Update Inventory file provision-stack/inventory-vpro
+      blockinfile:
+        path: provision-stack/inventory-vpro
+        block: |
+          web01 ansible_host="{{web01_out.tagged_instance[0].private_ip}}"
+          app01 ansible_host="{{app01_out.tagged_instance[0].private_ip}}"
+          rmq01 ansible_host="{{rmq01_out.tagged_instance[0].private_ip}}"
+          mc01 ansible_host="{{mc01_out.tagged_instance[0].private_ip}}"
+          db01 ansible_host="{{db01_out.tagged_instance[0].private_ip}}"
+          cntl ansible_host=49.204.131.224 ansible_connection=local
 
-         [websrvgrp]
-         web01
+          [websrvgrp]
+          web01
 
-         [appsrvgrp]
-         app01
+          [appsrvgrp]
+          app01
 
-         [rmqsrvgrp]
-         rmq01
+          [rmqsrvgrp]
+          rmq01
 
-         [mcsrvgrp]
-         mc01
+          [mcsrvgrp]
+          mc01
 
-         [dbsrvgrp]
-         db01
+          [dbsrvgrp]
+          db01
 
-         [control]
-         cntl
+          [control]
+          cntl
 
-         [stack_inst:childre]
-         websrvgrp
-         appsrvgrp
-         rmqsrvgrp
-         mcsrvgrp
-         dbsrvgrp
+          [stack_inst:childre]
+          websrvgrp
+          appsrvgrp
+          rmqsrvgrp
+          mcsrvgrp
+          dbsrvgrp
 
-         [stack_inst:vars]
-         ansible_user=ubuntu
-         ansible_ssh_private_key_file=loginkey_vpro.pem
-         #ansible_python_interpreter=/usr/bin/python3
+          [stack_inst:vars]
+          ansible_user=ubuntu
+          ansible_ssh_private_key_file=loginkey_vpro.pem
+          #ansible_python_interpreter=/usr/bin/python3
