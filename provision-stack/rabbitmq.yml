@@ -11,7 +11,7 @@
 
     - name: Add an Erlang Solution public key
       apt_key:
-        url: https://packages.erland-solutions.com/ubuntu/erlang_solutions.asc
+        url: https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
         state: present
       tags:
         - package
