@@ -18,7 +18,12 @@
         state: import
         target: /tmp/db_backup.sql
       notify:
-        - Restart mysal
+        - Restart mysql
       tags:
         - deploy
-        
+
+  handlers:
+    - name: Restart mysql
+      service:
+        name: mysql
+        state: restarted
