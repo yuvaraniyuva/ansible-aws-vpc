@@ -24,7 +24,7 @@ db01
 [control]
 cntl
 
-[stack_inst:children]
+[stack_inst:childre]
 websrvgrp
 appsrvgrp
 rmqsrvgrp
