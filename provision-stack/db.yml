@@ -3,7 +3,7 @@
   hosts: dbsrvgrp
   gather_facts: no
   tasks:
-    - name: Installing MySQL Service and Dependencies
+    - name: Installing Mysql Service and dependencies
       package:
         name: "{{item}}"
         state: present
@@ -27,13 +27,14 @@
       tags:
         - svc
 
-    - name: Creating mysql user
+    - name: creating mysql user
       mysql_user:
         name: "{{dbuser}}"
         password: "{{dbpass}}"
         priv: '*.*:ALL'
         host: '%'
         state: present
+
 
     - name: Creating accounts DB
       mysql_db:
